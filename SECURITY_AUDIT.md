@@ -48,3 +48,16 @@ A hosted Vercel deployment has not been tested; local policy checks do not estab
 A local Git repository was initialized on `main` during publication preparation. The 33 files in `COMMIT_FILES.txt` were rescanned and staged for review; publication and pushing require the user's explicit approval. No remote repository was created or deployment performed during preparation. `COMMIT_FILES.txt` is the exact initial source file set, relative to this project root. `node_modules/` and `dist/` are local generated directories and are excluded. Any future additions must be rescanned and the manifest regenerated before approval. Files outside this project folder are outside the proposed repository.
 
 Do not commit secrets even when `.gitignore` exists; previously tracked files are not protected by ignore rules. All `VITE_*` values are public browser configuration and must never contain credentials. Keep npm's lockfile committed and re-run `npm audit` before publication.
+
+
+## Post-publication status — 6 November 2026
+
+This section updates publication status without changing the original findings or the preparation-time record above.
+
+- **GitHub publication complete:** the public repository is [buildwahab/mechanical-crab-3d](https://github.com/buildwahab/mechanical-crab-3d). The initial commit, `71224e97a2094896a457a154e2b30836b233a388`, contains the 33 files listed in `COMMIT_FILES.txt`; the previous publication step verified that GitHub's `main` matched that commit.
+- **Vercel publication complete:** the live site is [mechanical-crab-3d.vercel.app](https://mechanical-crab-3d.vercel.app/), as supplied by the project owner and observed loading in the browser during this documentation review. A screenshot of its rendered overview was captured for the README. This confirms a page-load observation, not a comprehensive hosted-site test.
+- **Documentation-only follow-up:** the README now includes publication links, features, the tech stack, setup instructions, and a real preview image. No application code, deployment configuration, dependency versions, or project license were changed in this follow-up.
+- **Review scope:** the documentation changes and preview were checked for accidental sensitive information. No new dependency audit, build, animation validation, full interaction regression, live HTTP-header audit, penetration test, or physical-device performance benchmark was performed during this documentation cleanup. The original audit results and local browser checks remain limited to their recorded scope and date.
+- **Historical manifest:** `COMMIT_FILES.txt` continues to record the original 33-file publication. The new documentation preview is not part of that initial commit. Future commits should review their actual diff and file list rather than treating this historical manifest as a complete current inventory.
+
+Publication does not establish that the site is vulnerability-free. The earlier statement that the hosted Vercel deployment had not been tested describes the original review; this follow-up adds only the page-load and screenshot observations stated above.
